@@ -40,7 +40,8 @@
         }
 
         .container {
-            max-width: 1270px;
+            position: relative;
+            max-width: 768px;
             height: 100vh;
             padding: 4px;
             margin: 0 auto;
@@ -360,12 +361,34 @@
             document.getElementById("segments").textContent = tmp;
             localStorage.setItem('counter', tmp);
             document.getElementById("footer-view").textContent = `👁 ${parseInt(c, 16).toString()}`;
+
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                await applyTheme(savedTheme);
+                document.getElementById('themeSelect').value = savedTheme;
+            }
+
+            document.getElementById('themeSelect').addEventListener('change', async () => {
+                const selectedTheme = event.target.value;
+                await applyTheme(selectedTheme);
+                localStorage.setItem('theme', selectedTheme);
+            })
+
+            const savedLang = localStorage.getItem('lang');
+            if (savedLang) {
+                await applyLang(savedLang);
+                document.getElementById('languageSelect').value = savedLang;
+            }
+
+            document.getElementById('languageSelect').addEventListener('change', async () => {
+                const selectedLang = event.target.value;
+                await applyLang(selectedLang);
+                localStorage.setItem('lang', selectedLang);
+            })
         })
 
-        document.getElementById("themeSelect").addEventListener('change', async () => {
-            var themeSelect = event.target.value;
-
-            if (themeSelect === 'DARK') {
+        async function applyTheme(theme) {
+            if (theme === 'DARK') {
                 document.querySelector("body").style.background = "#1E2337";
                 document.querySelector("body").style.color = "#F7F9FB";
 
@@ -383,12 +406,10 @@
                 document.querySelector(".action-ton-button").style.background = "#F7F9FB";
                 document.querySelector(".action-ton-button").style.color = "#555";
             }
-        })
+        }
 
-        document.getElementById("languageSelect").addEventListener('change', async () => {
-            var selectedLanguage = event.target.value;
-
-            if (selectedLanguage === 'ZH') {
+        async function applyLang(lang) {
+            if (lang === 'ZH') {
                 document.querySelector(".counter-before").textContent = "快乐";
                 document.querySelector(".counter-after").textContent = "人";
                 document.querySelector(".invoice-before").textContent = "快乐:";
@@ -404,7 +425,7 @@
                 document.querySelector(".action-get-button").textContent = "带出来";
                 document.querySelector(".action-del-button").textContent = "移走";
             }
-            else if (selectedLanguage === 'AR') {
+            else if (lang === 'AR') {
                 document.querySelector(".counter-before").textContent = "جعل سعيد:";
                 document.querySelector(".counter-after").textContent = "الإنسان";
                 document.querySelector(".invoice-before").textContent = "اجعلهم سعداء:";
@@ -420,7 +441,7 @@
                 document.querySelector(".action-get-button").textContent = "أخرج";
                 document.querySelector(".action-del-button").textContent = "إزالة";
             }
-            else if (selectedLanguage === 'ES') {
+            else if (lang === 'ES') {
                 document.querySelector(".counter-before").textContent = "Hecho feliz";
                 document.querySelector(".counter-after").textContent = "personas";
                 document.querySelector(".invoice-before").textContent = "Hacer feliz:";
@@ -436,7 +457,7 @@
                 document.querySelector(".action-get-button").textContent = "Retirar";
                 document.querySelector(".action-del-button").textContent = "Eliminar";
             }
-            else if (selectedLanguage === 'RU') {
+            else if (lang === 'RU') {
                 document.querySelector(".counter-before").textContent = "Сделаны счастливыми";
                 document.querySelector(".counter-after").textContent = "человек";
                 document.querySelector(".invoice-before").textContent = "Сделать счастливыми:";
@@ -452,7 +473,7 @@
                 document.querySelector(".action-get-button").textContent = "Вывести";
                 document.querySelector(".action-del-button").textContent = "Удалить";
             }
-            else if (selectedLanguage === 'FR') {
+            else if (lang === 'FR') {
                 document.querySelector(".counter-before").textContent = "Fait heureux";
                 document.querySelector(".counter-after").textContent = "personnes";
                 document.querySelector(".invoice-before").textContent = "Rendre heureux:";
@@ -484,7 +505,7 @@
                 document.querySelector(".action-get-button").textContent = "Withdraw";
                 document.querySelector(".action-del-button").textContent = "Delete";
             }
-        })
+        }
 
         tonConnectUI.onStatusChange(async (wallet) => {
             console.log('onStatusChange');
@@ -494,7 +515,7 @@
                 if (addressOwnerRaw === tonConnectUI.account.address) {
                     document.querySelector(".owner-text").style.display = "block";
                     document.querySelector(".action").style.display = "block";
-                    await sleep(3000)
+                    await sleep(2222)
                     b = await balance(addressContractFriendly);
                     document.getElementById("balance").innerText = `${b.toFixed(6)} TON`;
                 }
