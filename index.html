@@ -109,7 +109,7 @@
             font-size: 20px;
             color: rgba(222, 222, 222, 1.0);
             background-color: rgba(22, 22, 22, 1.0);
-            padding: 10px 10px 10px 10px;
+            padding: 9px 9px 9px 9px;
             border-radius: 24px;
             text-align: center;
         }
@@ -124,18 +124,19 @@
 
         .invoice-inner input[type="number"] {
             border-radius: 24px;
-            padding: 10px 0px 10px 0px;
+            padding: 9px 9px 9px 9px;
             text-align: center;
             color: #555;
             min-width: 120px;
             max-width: 120px;
+            min-height: 40px;
         }
 
         .round-button {
             width: 150px;
             height: 150px;
             border-radius: 50%;
-            background-image: url(https://telegra.ph/file/af710e0805db2b34c43c5.png);
+            background-image: url(https://fereysitnerya.github.io/ferey/red-button.png);
             background-size: cover;
             border: none;
             cursor: pointer;
@@ -146,7 +147,7 @@
 
         .comment-inner input[type="text"] {
             border-radius: 24px;
-            padding: 10px 0px 10px 0px;
+            padding: 9px 9px 9px 9px;
             text-align: center;
 
             min-width: 120px;
@@ -184,8 +185,6 @@
         .comment-before-button,
         .action-ton-button {
             border-radius: 24px;
-            /* color: #555; */
-
             min-height: 40px;
             padding: 9px;
             font-size: 16px;
@@ -343,7 +342,7 @@
         // в stateInit вшит '0QD_pyZGZgkyGHEUBcshAdub62qJmfXrdcC1oQqmQ7LsW9-n'
         let stateInit = 'te6cckECDwEAAbAAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBbgwNAAe1Ry4wAAu2P/4AJhAASwAAAACAH/TkyMzBJkMOIoC5ZCA7c31tUTM+vW64FrQhVMh2XYtwH/TfzQ==';
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
-            manifestUrl: 'https://raw.githubusercontent.com/ton-defi-org/tonconnect-manifest-temp/main/tonconnect-manifest.json',
+            manifestUrl: 'https://fereysitnerya.github.io/ferey/tonconnect-manifest.json',
             buttonRootId: 'connect',
             language: language,
             uiPreferences: { theme: theme, borderRadius: 'm' }
