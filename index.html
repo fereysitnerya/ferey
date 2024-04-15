@@ -342,9 +342,8 @@
         let addressContractFriendly = 'EQB3HUTL8nLDc7NEcIZbwvQxAPcDxg7HAIqZjgYRGn0JwjUb';
         // let addressOwnerRaw = '0:ffa7264666093218711405cb2101db9beb6a8999f5eb75c0b5a10aa643b2ec5b';
         let addressOwnerRaw = '0:8d42571e73f66999a62dbd7095b999eef3ef38f4131ab3af8ef468d5e340e4e4';
-        // в stateInit вшит '0QD_pyZGZgkyGHEUBcshAdub62qJmfXrdcC1oQqmQ7LsW9-n'
         // let stateInit = 'te6cckECDwEAAbAAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBbgwNAAe1Ry4wAAu2P/4AJhAASwAAAACAH/TkyMzBJkMOIoC5ZCA7c31tUTM+vW64FrQhVMh2XYtwH/TfzQ==';
-        let stateInit = 'te6cckEBAQEAJgAASAAAAAB0b24tc2l0ZSBkb2Vzbid0IHN1cHBvcnQgY29tbWVudB+DAXw=","stateInit":"te6cckECDwEAAbIAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBIAwNAAu9zS+ACYwAC7+P/4AJhABLAAAAAIARqErjzn7NMzTFt64StzM93n3nHoJjVnXx3o0avGgcnJDu/QUI';
+        let stateInit = 'te6cckECDwEAAbIAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBIAwNAAu9zS+ACYwAC7+P/4AJhABLAAAAAIARqErjzn7NMzTFt64StzM93n3nHoJjVnXx3o0avGgcnJDu/QUI';
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl: 'https://fereysitnerya.github.io/ferey/tonconnect-manifest.json',
             buttonRootId: 'connect',
@@ -581,10 +580,8 @@
             console.log(message);
 
             try {
-                console.log(transaction)
-                const result = await tonConnectUI.sendTransaction({ validUntil: Math.round(Date.now() / 1000) + 60, messages: message, });
-
                 console.log(`https://tonviewer.com/${addressContractFriendly}`);
+                const result = await tonConnectUI.sendTransaction({ validUntil: Math.round(Date.now() / 1000) + 60, messages: message, });
                 // tonConnectUI.uiOptions = { twaReturnUrl: 'https://t.me/durov'};
                 document.getElementById("link").style.display = "block";
 
