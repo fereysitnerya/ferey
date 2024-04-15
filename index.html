@@ -47,7 +47,17 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            gap: 4px;
+        }
+
+        .container-inner {
+            max-width: 1270px;
+            height: 100vh;
+            padding: 4px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            gap: 12px;
         }
 
         .hiddenDiv {
@@ -73,6 +83,11 @@
             cursor: auto;
         }
 
+        .comment {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
         .counter-before,
         .counter-after,
         .invoice-before,
@@ -90,11 +105,11 @@
             max-width: 120px;
         }
 
-        p {
+        #segments {
             font-size: 20px;
             color: rgba(222, 222, 222, 1.0);
             background-color: rgba(22, 22, 22, 1.0);
-            padding: 12px 30px 8px 30px;
+            padding: 10px 10px 10px 10px;
             border-radius: 24px;
             text-align: center;
         }
@@ -245,70 +260,70 @@
 
 <body>
     <div class="container">
-        <div class="header">
-            <div class="theme">
-                <select id="themeSelect">
-                    <option value="LIGHT">🌖</option>
-                    <option value="DARK">🌒</option>
-                </select>
+        <div class="container-inner">
+            <div class="header">
+                <div class="theme">
+                    <select id="themeSelect">
+                        <option value="LIGHT">🌖</option>
+                        <option value="DARK">🌒</option>
+                    </select>
+                </div>
+                <div class="language">
+                    <select id="languageSelect">
+                        <option value="EN">🇬🇧</option>
+                        <option value="ZH">🇨🇳</option>
+                        <option value="AR">🇦🇪</option>
+                        <option value="ES">🇪🇸</option>
+                        <option value="RU">🇷🇺</option>
+                        <option value="FR">🇫🇷</option>
+                    </select>
+                </div>
+                <div id="connect"></div>
             </div>
-            <div class="language">
-                <select id="languageSelect">
-                    <option value="EN">🇬🇧</option>
-                    <option value="ZH">🇨🇳</option>
-                    <option value="AR">🇦🇪</option>
-                    <option value="ES">🇪🇸</option>
-                    <option value="RU">🇷🇺</option>
-                    <option value="FR">🇫🇷</option>
-                </select>
+
+            <div class="counter">
+                <div class="counter-before">Made happy</div>
+                <div id="segments" class="counter-inner">000000</div>
+                <div class="counter-after">people</div>
             </div>
-            <div id="connect"></div>
-        </div>
 
-        <div class="counter">
-            <div class="counter-before">Made happy</div>
-            <div class="counter-inner">
-                <p id="segments">000000</p>
+            <div class="invoice">
+                <div class="invoice-before">Make happy:</div>
+                <div class="invoice-inner">
+                    <input type="number" id="invoice-input" step="0.1" min="0" value="0.05">
+                </div>
+                <div class="invoice-after">people</div>
             </div>
-            <div class="counter-after">people</div>
-        </div>
 
-        <div class="invoice">
-            <div class="invoice-before">Make happy:</div>
-            <div class="invoice-inner">
-                <input type="number" id="invoice-input" step="0.1" min="0" value="0.05">
+            <div class="main">
+                <div class="main-before">Click on the smart contract button</div>
+                <div><button class="round-button" onclick="transaction()"></button></div>
+                <div class="main-after">and somewhere in the world, 1 random person will become happy</div>
             </div>
-            <div class="invoice-after">people</div>
-        </div>
 
-        <div class="main">
-            <div class="main-before">Click on the smart contract button</div>
-            <div><button class="round-button" onclick="transaction()"></button></div>
-            <div class="main-after">and somewhere in the world, 1 random person will become happy</div>
-        </div>
+            <div class="comment">
+                <div class="comment-before"><button disabled class="comment-before-button">A wish:</button></div>
+                <div class="comment-inner"><input type="text" id="comment-input" maxlength="64" placeholder="..."></div>
+                <div class="comment-after"><button class="comment-after-button" onclick="comment()">Generate</button>
+                </div>
+            </div>
 
-        <div class="comment">
-            <div class="comment-before"><button disabled class="comment-before-button">A wish:</button></div>
-            <div class="comment-inner"><input type="text" id="comment-input" maxlength="64" placeholder="..."></div>
-            <div class="comment-after"><button class="comment-after-button" onclick="comment()">Generate</button>
+            <a id="link">View the transaction</a>
+
+            <div class="owner-text">
+                You are logged in as the owner: you can withdraw funds to the balance of the connected wallet or delete
+                the
+                smart
+                contract:
+            </div>
+
+            <div class="action">
+                <div class="action-before"><button disabled id="balance" class="action-ton-button">0.000000 TON</button>
+                </div>
+                <div class="action-inner"><button class="action-get-button" onclick="get()">Withdraw</button></div>
+                <div class="action-after"><button class="action-del-button" onclick="del()">Delete</button></div>
             </div>
         </div>
-
-        <a id="link">View the transaction</a>
-
-        <div class="owner-text">
-            You are logged in as the owner: you can withdraw funds to the balance of the connected wallet or delete the
-            smart
-            contract:
-        </div>
-
-        <div class="action">
-            <div class="action-before"><button disabled id="balance" class="action-ton-button">0.000000 TON</button>
-            </div>
-            <div class="action-inner"><button class="action-get-button" onclick="get()">Withdraw</button></div>
-            <div class="action-after"><button class="action-del-button" onclick="del()">Delete</button></div>
-        </div>
-
         <div class="footer-inner">
             <div id="footer-view">👁 1</div>
             <div><a href="https://t.me/FereyDemoBot" style="color: rgba(140, 150, 160, 0.99);">@FereyDemoBot</a>
