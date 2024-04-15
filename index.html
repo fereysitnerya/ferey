@@ -354,7 +354,7 @@
         document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("link").href = `https://tonviewer.com/${addressContractFriendly}`;
             document.getElementById("link").style.display = "none";
-            // document.getElementById("invoice-input").value = "1.5";
+            document.getElementById("invoice-input").value = "1.5";
 
             await comment()
             c = await getCounter(addressContractFriendly);
