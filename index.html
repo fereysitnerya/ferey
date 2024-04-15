@@ -334,14 +334,17 @@
         let c = 0
         let b = 0
         let isInit = 0
-        let language = 'en';
+        let language = "en";
         let theme = "LIGHT";
         let payload_get = 'te6cckEBAQEABgAACAAAA48mr63n';
         let payload_del = 'te6cckEBAQEABgAACAAAA5BtVOCp';
-        let addressContractFriendly = 'EQDm0wkYPrfUAuZOPus0AT2T1IuSsYXF0JcYXmsDbxPX6_aC';
-        let addressOwnerRaw = '0:ffa7264666093218711405cb2101db9beb6a8999f5eb75c0b5a10aa643b2ec5b';
+        // let addressContractFriendly = 'EQDm0wkYPrfUAuZOPus0AT2T1IuSsYXF0JcYXmsDbxPX6_aC';
+        let addressContractFriendly = 'EQB3HUTL8nLDc7NEcIZbwvQxAPcDxg7HAIqZjgYRGn0JwjUb';
+        // let addressOwnerRaw = '0:ffa7264666093218711405cb2101db9beb6a8999f5eb75c0b5a10aa643b2ec5b';
+        let addressOwnerRaw = '0:8d42571e73f66999a62dbd7095b999eef3ef38f4131ab3af8ef468d5e340e4e4';
         // в stateInit вшит '0QD_pyZGZgkyGHEUBcshAdub62qJmfXrdcC1oQqmQ7LsW9-n'
-        let stateInit = 'te6cckECDwEAAbAAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBbgwNAAe1Ry4wAAu2P/4AJhAASwAAAACAH/TkyMzBJkMOIoC5ZCA7c31tUTM+vW64FrQhVMh2XYtwH/TfzQ==';
+        // let stateInit = 'te6cckECDwEAAbAAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBbgwNAAe1Ry4wAAu2P/4AJhAASwAAAACAH/TkyMzBJkMOIoC5ZCA7c31tUTM+vW64FrQhVMh2XYtwH/TfzQ==';
+        let stateInit = 'te6cckEBAQEAJgAASAAAAAB0b24tc2l0ZSBkb2Vzbid0IHN1cHBvcnQgY29tbWVudB+DAXw=","stateInit":"te6cckECDwEAAbIAAgE0AQ4BFP8A9KQT9LzyyAsCAgFiAwsCAs4ECgIBIAUJAvcAdDTAwFxsJJfBOD6QDCNBZteV9iYWxhbmNlICYgbXNnX3ZhbHVlg/hQwI/4gMCL+IDBxI4IQdzWUAL6bMAKCEDuaygCpBAKRM+KLtpbmNyZWFzZV9ieY/hQwIv4gMPABBKBTA/ACi3Y291bnRlco/hQw/iAwIccA4wIBgBgcABF8EAdjTHzAgwACSXwTgiyb3CP4UMCD+IDAggQOPuo45MCHHBfLjjwGCCJiWgKGLM5MTGP4UMCD+IDBwIIAYyMsFUATPFlj6AhLLassfizZ2V0jPFsmDBvsA4DOLRoZXJlj+FDACgQOQuuMCW4QP8vAIAI6LVoZXJlMo/hQwZscF8uOQizOTEyj+FDCLpteV9iYWxhbmNlj+FDBwIIAYyMsFUAPPFiH6AhLLassfizZGVsjPFsmBAKD7AAARO1E0NMf+kAwgABVAHIyx8BzxbJ7VSAIBIAwNAAu9zS+ACYwAC7+P/4AJhABLAAAAAIARqErjzn7NMzTFt64StzM93n3nHoJjVnXx3o0avGgcnJDu/QUI';
         const tonConnectUI = new TON_CONNECT_UI.TonConnectUI({
             manifestUrl: 'https://fereysitnerya.github.io/ferey/tonconnect-manifest.json',
             buttonRootId: 'connect',
@@ -350,7 +353,7 @@
         })
 
         document.addEventListener("DOMContentLoaded", async () => {
-            document.getElementById("link").href = `https://testnet.tonviewer.com/${addressContractFriendly}`;
+            document.getElementById("link").href = `https://tonviewer.com/${addressContractFriendly}`;
             document.getElementById("link").style.display = "none";
             // document.getElementById("invoice-input").value = "1.5";
 
@@ -581,7 +584,7 @@
                 console.log(transaction)
                 const result = await tonConnectUI.sendTransaction({ validUntil: Math.round(Date.now() / 1000) + 60, messages: message, });
 
-                console.log(`https://testnet.tonviewer.com/${addressContractFriendly}`);
+                console.log(`https://tonviewer.com/${addressContractFriendly}`);
                 // tonConnectUI.uiOptions = { twaReturnUrl: 'https://t.me/durov'};
                 document.getElementById("link").style.display = "block";
 
@@ -599,7 +602,7 @@
                 console.log(e)
 
                 if (!tonConnectUI.connected) {
-                    alert("Сначала подключи аккаунт через TON-кошелек");
+                    alert(await translateAlert());
                 }
             }
         }
@@ -612,10 +615,35 @@
             document.getElementById('comment-input').value = word1 + ' ' + word2;
         }
 
+        async function translateAlert() {
+            let result = "First, you need to connect a TON wallet";
+            const savedLang = localStorage.getItem('lang');
+            if (savedLang === null) {
+                result = "First, you need to connect a TON wallet"
+            }
+            else if (savedLang === "zh") {
+                result = "首先，你需要连接一吨钱包"
+            }
+            else if (savedLang === "ar") {
+                result = "أولا ، تحتاج إلى توصيل محفظة طن"
+            }
+            else if (savedLang === "es") {
+                result = "Primero debe conectar la billetera TON"
+            }
+            else if (savedLang === "ru") {
+                result = "Сначала необходимо подключить TON-кошелек"
+            }
+            else if (savedLang === "fr") {
+                result = "Vous devez d'abord connecter TON portefeuille"
+            }
+            return result;
+        }
+
         async function balance(addressContractFriendly) {
             try {
                 console.log('balance', addressContractFriendly);
-                const tonweb = new window.TonWeb(new TonWeb.HttpProvider('https://testnet.toncenter.com/api/v2/jsonRPC'));
+                // const tonweb = new window.TonWeb(new TonWeb.HttpProvider('https://testnet.toncenter.com/api/v2/jsonRPC'));
+                const tonweb = new window.TonWeb(new TonWeb.HttpProvider('https://toncenter.com/api/v2/jsonRPC'));
                 b = await tonweb.getBalance(addressContractFriendly);
                 b = b / 1000000000;
             } catch (error) {
@@ -628,7 +656,8 @@
         async function getCounter(addressContractFriendly) {
             try {
                 console.log('getCounter', addressContractFriendly);
-                const tonweb = new window.TonWeb(new TonWeb.HttpProvider('https://testnet.toncenter.com/api/v2/jsonRPC'));
+                // const tonweb = new window.TonWeb(new TonWeb.HttpProvider('https://testnet.toncenter.com/api/v2/jsonRPC'));
+                const tonweb = new window.TonWeb(new TonWeb.HttpProvider('https://toncenter.com/api/v2/jsonRPC'));
                 const result = await tonweb.provider.call(addressContractFriendly, 'get_counter', []);
                 console.log('GET method result:', result);
                 c = (result.exit_code != 0) ? 0 : result.stack[0][1];
