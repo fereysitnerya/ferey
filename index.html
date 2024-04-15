@@ -270,12 +270,12 @@
                 </div>
                 <div class="language">
                     <select id="languageSelect">
-                        <option value="EN">🇬🇧</option>
-                        <option value="ZH">🇨🇳</option>
-                        <option value="AR">🇦🇪</option>
-                        <option value="ES">🇪🇸</option>
-                        <option value="RU">🇷🇺</option>
-                        <option value="FR">🇫🇷</option>
+                        <option value="en">🇬🇧</option>
+                        <option value="zh">🇨🇳</option>
+                        <option value="ar">🇦🇪</option>
+                        <option value="es">🇪🇸</option>
+                        <option value="ru">🇷🇺</option>
+                        <option value="fr">🇫🇷</option>
                     </select>
                 </div>
                 <div id="connect"></div>
@@ -406,10 +406,15 @@
                 document.querySelector(".action-ton-button").style.background = "#F7F9FB";
                 document.querySelector(".action-ton-button").style.color = "#555";
             }
+            tonConnectUI.uiOptions = {
+                uiPreferences: {
+                    theme: theme
+                }
+            }
         }
 
         async function applyLang(lang) {
-            if (lang === 'ZH') {
+            if (lang === 'zh') {
                 document.querySelector(".counter-before").textContent = "快乐";
                 document.querySelector(".counter-after").textContent = "人";
                 document.querySelector(".invoice-before").textContent = "快乐:";
@@ -425,7 +430,7 @@
                 document.querySelector(".action-get-button").textContent = "带出来";
                 document.querySelector(".action-del-button").textContent = "移走";
             }
-            else if (lang === 'AR') {
+            else if (lang === 'ar') {
                 document.querySelector(".counter-before").textContent = "جعل سعيد:";
                 document.querySelector(".counter-after").textContent = "الإنسان";
                 document.querySelector(".invoice-before").textContent = "اجعلهم سعداء:";
@@ -441,7 +446,7 @@
                 document.querySelector(".action-get-button").textContent = "أخرج";
                 document.querySelector(".action-del-button").textContent = "إزالة";
             }
-            else if (lang === 'ES') {
+            else if (lang === 'es') {
                 document.querySelector(".counter-before").textContent = "Hecho feliz";
                 document.querySelector(".counter-after").textContent = "personas";
                 document.querySelector(".invoice-before").textContent = "Hacer feliz:";
@@ -457,7 +462,7 @@
                 document.querySelector(".action-get-button").textContent = "Retirar";
                 document.querySelector(".action-del-button").textContent = "Eliminar";
             }
-            else if (lang === 'RU') {
+            else if (lang === 'ru') {
                 document.querySelector(".counter-before").textContent = "Сделаны счастливыми";
                 document.querySelector(".counter-after").textContent = "человек";
                 document.querySelector(".invoice-before").textContent = "Сделать счастливыми:";
@@ -473,7 +478,7 @@
                 document.querySelector(".action-get-button").textContent = "Вывести";
                 document.querySelector(".action-del-button").textContent = "Удалить";
             }
-            else if (lang === 'FR') {
+            else if (lang === 'fr') {
                 document.querySelector(".counter-before").textContent = "Fait heureux";
                 document.querySelector(".counter-after").textContent = "personnes";
                 document.querySelector(".invoice-before").textContent = "Rendre heureux:";
@@ -505,6 +510,7 @@
                 document.querySelector(".action-get-button").textContent = "Withdraw";
                 document.querySelector(".action-del-button").textContent = "Delete";
             }
+            tonConnectUI.uiOptions = { language: lang }
         }
 
         tonConnectUI.onStatusChange(async (wallet) => {
