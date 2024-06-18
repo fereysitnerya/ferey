@@ -363,15 +363,6 @@
             document.getElementById("link").href = `https://tonviewer.com/${addressContractFriendly}`;
             document.getElementById("link").style.display = "none";
             document.getElementById("invoice-input").value = "1.5";
-
-            await comment()
-            c = await getCounter(addressContractFriendly);
-            isInit = c ? 1 : 0
-            let tmp = parseInt(c, 16).toString().padStart(6, '0');
-            document.getElementById("segments").textContent = tmp;
-            localStorage.setItem('counter', tmp);
-            document.getElementById("footer-view").textContent = `👁 ${parseInt(c, 16).toString()}`;
-
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 await applyTheme(savedTheme);
@@ -395,6 +386,14 @@
                 await applyLang(selectedLang);
                 localStorage.setItem('lang', selectedLang);
             })
+
+            await comment()
+            c = await getCounter(addressContractFriendly);
+            isInit = c ? 1 : 0
+            let tmp = parseInt(c, 16).toString().padStart(6, '0');
+            document.getElementById("segments").textContent = tmp;
+            localStorage.setItem('counter', tmp);
+            document.getElementById("footer-view").textContent = `👁 ${parseInt(c, 16).toString()}`;
         })
 
         async function applyTheme(theme) {
@@ -418,7 +417,7 @@
             else {
                 document.querySelector("body").style.background = "#F7F9FB";
                 document.querySelector("body").style.color = "#1E2337";
- 
+
                 document.querySelector(".comment-before-button").style.background = "#F7F9FB";
                 document.querySelector(".comment-before-button").style.color = "#555";
                 document.querySelector(".action-ton-button").style.background = "#F7F9FB";
