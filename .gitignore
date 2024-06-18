@@ -1,0 +1,25 @@
+# Node.js и npm
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Локальные настройки
+.env
+
+# Компилированные расширения
+*.log
+*.sql
+*.cache
+
+# Изображения
+*.jpg
+*.png
+
+# Игнорировать все .DS_Store файлы (только для Mac OS X)
+.DS_Store
+
+# Игнорировать VSCode настройки
+.vscode/
+
+# Игнорировать папку dist (если используется для сборки)
+dist/
