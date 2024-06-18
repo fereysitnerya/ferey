@@ -6,7 +6,7 @@
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <script src="https://unpkg.com/@tonconnect/ui@2.0.2/dist/tonconnect-ui.min.js"></script>
     <script src="./tonweb.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>.</title>
 
     <style>
@@ -127,7 +127,6 @@
             border-radius: 24px;
             padding: 9px 9px 9px 9px;
             text-align: center;
-            /* color: #555; */
             min-width: 120px;
             max-width: 120px;
             min-height: 40px;
@@ -360,10 +359,27 @@
             uiPreferences: { theme: theme, borderRadius: 'm' }
         })
 
+        document.addEventListener('touchstart', async (event) => {
+            if (event.touches.length > 1) {
+                event.preventDefault();
+            }
+        }, { passive: false });
+
+        let lastTouchEnd = 0;
+        document.addEventListener('touchend', async (event) => {
+            let now = (new Date()).getTime();
+            if (now - lastTouchEnd <= 300) {
+                event.preventDefault();
+            }
+            lastTouchEnd = now;
+        }, false);
+
+
         document.addEventListener("DOMContentLoaded", async () => {
             document.getElementById("link").href = `https://tonviewer.com/${addressContractFriendly}`;
             document.getElementById("link").style.display = "none";
             document.getElementById("invoice-input").value = "1.5";
+            
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 await applyTheme(savedTheme);
