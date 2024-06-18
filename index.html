@@ -379,7 +379,7 @@
             document.getElementById("link").href = `https://tonviewer.com/${addressContractFriendly}`;
             document.getElementById("link").style.display = "none";
             document.getElementById("invoice-input").value = "1.5";
-            
+
             const savedTheme = localStorage.getItem('theme');
             if (savedTheme) {
                 await applyTheme(savedTheme);
@@ -410,7 +410,20 @@
             let tmp = parseInt(c, 16).toString().padStart(6, '0');
             document.getElementById("segments").textContent = tmp;
             localStorage.setItem('counter', tmp);
-            document.getElementById("footer-view").textContent = `👁 ${parseInt(c, 16).toString()}`;
+            document.getElementById("footer-view").textContent = `👁 ${parseInt(c, 16).toString()}`
+
+            let currentMonth = (new Date()).getMonth()
+            if (currentMonth === 10 || currentMonth === 11 || currentMonth === 0) {
+                var link = document.createElement('link')
+                link.href = 'https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/snow.min.css'
+                link.rel = 'stylesheet'
+                document.head.appendChild(link)
+
+                var script = document.createElement('script')
+                script.src = 'https://cdn.jsdelivr.net/gh/Alaev-Co/snowflakes/dist/Snow.min.js'
+                document.body.appendChild(script)
+                script.onload = function () { new Snow() }
+            }
         })
 
         async function applyTheme(theme) {
