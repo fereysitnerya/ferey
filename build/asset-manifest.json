@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/ferey/static/css/main.4fb1881d.css",
+    "main.js": "/ferey/static/js/main.d68a3df5.js",
+    "static/js/206.9982d565.chunk.js": "/ferey/static/js/206.9982d565.chunk.js",
+    "static/media/cat.svg": "/ferey/static/media/cat.4ee9a05c4e0888f970de08a78c963936.svg",
+    "static/media/starbig.svg": "/ferey/static/media/starbig.7e7508acff17e39d4adf8746a15470cf.svg",
+    "static/media/verify_purple.svg": "/ferey/static/media/verify_purple.d28117046ba2972f2f22135db86be0a9.svg",
+    "static/media/manager.svg": "/ferey/static/media/manager.364f8a8507abe154ada39f091f1b7175.svg",
+    "static/media/at.svg": "/ferey/static/media/at.72d7e00e4b6eaa4ce439e0fd0398d0a7.svg",
+    "static/media/list.svg": "/ferey/static/media/list.2fd579e7e4a2e5a03abd2fc2491e45db.svg",
+    "static/media/ok.svg": "/ferey/static/media/ok.33ae16d107c44134e0fcb1fb27c72c49.svg",
+    "index.html": "/ferey/index.html",
+    "static/media/person.svg": "/ferey/static/media/person.c7a72dd575c0ca68c816da92230db7c6.svg",
+    "static/media/ton.svg": "/ferey/static/media/ton.6d9b4535bbef7d3d043be70a2df697f8.svg",
+    "static/media/boost.svg": "/ferey/static/media/boost.291ecd92f411274d91dbe63d42bf8661.svg"
+  },
+  "entrypoints": [
+    "static/css/main.4fb1881d.css",
+    "static/js/main.d68a3df5.js"
+  ]
+}
