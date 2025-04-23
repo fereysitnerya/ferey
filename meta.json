@@ -4,5 +4,6 @@
   "decimals": "9",
   "image": "https://i.ibb.co/SKMtNTG/mintless.png",
   "description": "Jetton for mintless technology integration. Official channel: https://t.me/mintless_technology",
-  "custom_payload_api_uri": "https://claim-api.tonapi.io/jettons/EQD6Z9DHc5Mx-8PI8I4BjGX0d2NhapaRAK12CgstweNoMint"
+  "mintless_merkle_dump_uri": "https://fereysitnerya.github.io/ferey/airdropData.boc",
+  "custom_payload_api_uri": "https://mintlessapi.loca.lt"
 }
